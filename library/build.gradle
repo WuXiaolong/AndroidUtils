@@ -9,6 +9,8 @@ android {
         targetSdkVersion 23
         versionCode 100
         versionName "1.0.0"
+        buildConfigField 'String', 'TAG', '"wxl"'
+        buildConfigField 'boolean', 'LOG', 'true'
     }
     buildTypes {
         release {
@@ -23,6 +25,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
 }
+
+//http://blog.csdn.net/whu_zhangmin/article/details/46468061
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
 //添加
 apply plugin: 'com.novoda.bintray-release'
 publish {

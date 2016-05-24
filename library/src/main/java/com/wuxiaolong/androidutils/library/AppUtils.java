@@ -7,79 +7,20 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by WuXiaolong on 2016/3/22.
  */
 public class AppUtils {
-    /**
-     * 启动相机
-     */
 
-    public static String startCamera(Activity activity, int requestCode) {
-        // 指定相机拍摄照片保存地址
-        String state = Environment.getExternalStorageState();
-        if (state.equals(Environment.MEDIA_MOUNTED)) {
-            Intent intent = new Intent();
-            // 指定开启系统相机的Action
-            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-            File outDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-            if (!outDir.exists()) {
-                outDir.mkdirs();
-            }
-            File outFile = new File(outDir, System.currentTimeMillis() + ".jpg");
-            // 把文件地址转换成Uri格式
-            Uri uri = Uri.fromFile(outFile);
-            // 设置系统相机拍摄照片完成后图片文件的存放地址
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-            // 此值在最低质量最小文件尺寸时是0，在最高质量最大文件尺寸时是１
-            intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
-            activity.startActivityForResult(intent, requestCode);
-            return outFile.getAbsolutePath();
-        } else {
-            Toast.makeText(activity, "请确认已经插入SD卡",
-                    Toast.LENGTH_LONG).show();
-            return null;
-        }
-
-    }
-
-    /**
-     * 打开相册
-     */
-    public static void startAlbum(Activity activity, int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_PICK, null);
-        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        activity.startActivityForResult(intent, requestCode);
-    }
-
-    /**
-     * 验证手机
-     *
-     * @param mobiles
-     * @return
-     */
-    public static boolean isMobileNO(String mobiles) {
-        String expression = "((^(13|15|18)[0-9]{9}$)|(^0[1,2]{1}\\d{1}-?\\d{8}$)" +
-                "|(^0[3-9] {1}\\d{2}-?\\d{7,8}$)|(^0[1,2]{1}\\d{1}-?\\d{8}-(\\d{1,4})$)" +
-                "|(^0[3-9]{1}\\d{2}-? \\d{7,8}-(\\d{1,4})$))";
-        Pattern pattern = Pattern.compile(expression);
-        Matcher matcher = pattern.matcher(mobiles);
-        return matcher.matches();
-    }
 
     /**
      * FilePath To Bitmap
@@ -175,5 +116,11 @@ public class AppUtils {
         return result;
     }
 
-
+    public static void installAPK(Context context, String url) {
+        Intent intent = new Intent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setAction(android.content.Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.fromFile(new File(url)), "application/vnd.android.package-archive");
+        context.startActivity(intent);
+    }
 }
