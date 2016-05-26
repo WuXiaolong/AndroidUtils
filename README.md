@@ -4,23 +4,24 @@
 ```java
 compile 'com.wuxiaolong.androidutils:androidutils:1.0.1'
 ```
-# DisplayMetricsUtil
-## 获取屏幕分辨率-宽
+# 功能简介
+## DisplayMetricsUtil
+### 获取屏幕分辨率-宽
 ```java
 int getScreenWidth(Activity activity)
 ```
-## 获取屏幕分辨率-高
+### 获取屏幕分辨率-高
 ```java
 int getScreenHeight(Activity activity)
 ```
 
-# AbsolutePathUtil
+## AbsolutePathUtil
 通过Url获取绝对路径
 ```java
 String getAbsolutePath(final Context context, final Uri uri)
 ```
 
-# DownloadUtil
+## DownloadUtil
 调用DownloadManager下载
 ```java
 DownloadUtil downloadUtil = new DownloadUtil(activity, downloadUrl);
@@ -29,57 +30,57 @@ downloadUtil.setDownloadFileName("apkName" + System.currentTimeMillis() + ".apk"
 downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 downloadUtil.start();
 ```
-# LogUtil
+## LogUtil
 log打印类
 ```java
 LogUtil.d("");
 ```
-# RegexUtils
-## 验证Email
+## RegexUtils
+### 验证Email
 ```java
 boolean checkEmail(String email)
 ```
-## 验证身份证号码
+### 验证身份证号码
 ```java
 boolean checkIdCard(String idCard)
 ```
-## 验证手机号码
+### 验证手机号码
 ```java
 boolean checkMobile(String mobile)
 ```
-## 验证固定电话号码
+### 验证固定电话号码
 ```java
  boolean checkPhone(String phone)
 ```
-## 验证整数（正整数和负整数）
+### 验证整数（正整数和负整数）
 ```java
 boolean checkDecimals(String decimals)
 ```
-# SharedPreferencesUtil
+## SharedPreferencesUtil
 SharedPreferences工具类
 ```java
 void setString(Context context, final String key,final String value)
 ```
-# TimeUtil
+## TimeUtil
 时间工具类	
 
-# VersionUtil
-## 获取版本号
+## VersionUtil
+### 获取版本号
 ```java
 String getVersionName(Activity activity)
 ```
-## 获取版本code
+### 获取版本code
 ```java
 int getVersionCode(Activity activity)
 ```
 
-# AppUtils
+## AppUtils
 工具类集合，不好单独起名都放在AppUtils里
-## MD5加密
+### MD5加密
 ```java
 String md5(String plainText)
 ```
-# 安装apk
+## 安装apk
 ```java
 void installAPK(Context context, String path)
 ```
