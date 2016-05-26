@@ -8,16 +8,13 @@ import java.util.regex.Pattern;
  * 提供验证邮箱、手机号、电话号码、身份证号码、数字等方法
  */
 public final class RegexUtils {
-
     /**
-     * 验证Email
-     *
-     * @param email email地址，格式：zhangsan@sina.com，zhangsan@xxx.com.cn，xxx代表邮件服务商
-     * @return 验证成功返回true，验证失败返回false
+     * 是否为车牌号（沪A88888）
      */
-    public static boolean checkEmail(String email) {
-        String regex = "\\w+@\\w+\\.[a-z]+(\\.[a-z]+)?";
-        return Pattern.matches(regex, email);
+    public static boolean checkVehicleNo(String vehicleNo) {
+        Pattern pattern = Pattern.compile("^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{5}$");
+        return pattern.matcher(vehicleNo).find();
+
     }
 
     /**
@@ -30,6 +27,7 @@ public final class RegexUtils {
         String regex = "[1-9]\\d{13,16}[a-zA-Z0-9]{1}";
         return Pattern.matches(regex, idCard);
     }
+
 
     /**
      * 验证手机号码（支持国际格式，+86135xxxx...（中国内地），+00852137xxxx...（中国香港））
@@ -60,6 +58,17 @@ public final class RegexUtils {
     public static boolean checkPhone(String phone) {
         String regex = "(\\+\\d+)?(\\d{3,4}\\-?)?\\d{7,8}$";
         return Pattern.matches(regex, phone);
+    }
+
+    /**
+     * 验证Email
+     *
+     * @param email email地址，格式：zhangsan@sina.com，zhangsan@xxx.com.cn，xxx代表邮件服务商
+     * @return 验证成功返回true，验证失败返回false
+     */
+    public static boolean checkEmail(String email) {
+        String regex = "\\w+@\\w+\\.[a-z]+(\\.[a-z]+)?";
+        return Pattern.matches(regex, email);
     }
 
     /**

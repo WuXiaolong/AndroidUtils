@@ -17,7 +17,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by WuXiaolong on 2016/3/22.
+ * Created by WuXiaolong
+ * on 2016/3/22.
  */
 public class AppUtils {
 

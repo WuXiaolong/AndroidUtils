@@ -1,5 +1,9 @@
 > 个人收藏的Android常用工具类
 
+#Gradle依赖
+```java
+compile 'com.wuxiaolong.androidutils:androidutils:1.0.1'
+```
 # DisplayMetricsUtil
 ## 获取屏幕分辨率-宽
 ```java
