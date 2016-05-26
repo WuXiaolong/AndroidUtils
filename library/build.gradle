@@ -25,10 +25,15 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
 }
-
-//http://blog.csdn.net/whu_zhangmin/article/details/46468061
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
+//http://www.cnblogs.com/baron89/p/4662066.html
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.encoding = "UTF-8"
+        }
+    }
 }
 
 //添加

@@ -9,6 +9,12 @@ import android.content.pm.PackageManager;
  * on 2016/5/24.
  */
 public class VersionUtil {
+    /**
+     * 获取版本号
+     *
+     * @param activity
+     * @return
+     */
     public static String getVersionName(Activity activity) {
         PackageManager packageManager = activity.getPackageManager();
         String packageName = activity.getPackageName();
@@ -21,6 +27,12 @@ public class VersionUtil {
         return "1.0.0";
     }
 
+    /**
+     * 获取版本code
+     *
+     * @param activity
+     * @return
+     */
     public static int getVersionCode(Activity activity) {
         PackageManager packageManager = activity.getPackageManager();
         String packageName = activity.getPackageName();

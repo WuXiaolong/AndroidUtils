@@ -24,6 +24,9 @@ public class AppUtils {
 
     /**
      * FilePath To Bitmap
+     *
+     * @param activity
+     * @param filePath
      */
     public static Bitmap getBitmapFromFilePath(Activity activity, String filePath) {
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -47,12 +50,13 @@ public class AppUtils {
                 options.inSampleSize = bmpHeght / screenHeight;
         }
         options.inJustDecodeBounds = false;
-        Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
-        return bitmap;
+        return BitmapFactory.decodeFile(filePath, options);
     }
 
     /**
      * Bitmap to File
+     *
+     * @param bitmap
      */
     public static String bitmap2File(Bitmap bitmap) {
 
@@ -116,11 +120,17 @@ public class AppUtils {
         return result;
     }
 
-    public static void installAPK(Context context, String url) {
+    /**
+     * 安装apk
+     *
+     * @param context
+     * @param path
+     */
+    public static void installAPK(Context context, String path) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(android.content.Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(new File(url)), "application/vnd.android.package-archive");
+        intent.setDataAndType(Uri.fromFile(new File(path)), "application/vnd.android.package-archive");
         context.startActivity(intent);
     }
 }

@@ -16,7 +16,6 @@ import android.widget.Toast;
  * downloadUtil.setDownloadFileName("apkName" + System.currentTimeMillis() + ".apk");
  * downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
  * downloadUtil.start();
- * <p/>
  * Created by Administrator
  * on 2016/5/4.
  */

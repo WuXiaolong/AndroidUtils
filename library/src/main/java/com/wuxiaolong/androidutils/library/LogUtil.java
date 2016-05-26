@@ -2,7 +2,8 @@ package com.wuxiaolong.androidutils.library;
 
 
 /**
- * Created by Administrator on 2016/4/28.
+ * Created by Administrator
+ * on 2016/4/28.
  */
 public class LogUtil {
     private static final String TAG = BuildConfig.TAG;

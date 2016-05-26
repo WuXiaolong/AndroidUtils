@@ -10,7 +10,8 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
 /**
- * 通过Url获取绝对路劲(http://stackoverflow.com/questions/13209494/how-to-get-the-full-file-path-from-uri)
+ * 通过Url获取绝对路径
+ * (http://stackoverflow.com/questions/13209494/how-to-get-the-full-file-path-from-uri)
  * Created by WuXiaolong
  * on 2016/5/20.
  */
@@ -28,7 +29,6 @@ public class AbsolutePathUtil {
                     return Environment.getExternalStorageDirectory() + "/" + split[1];
                 }
 
-                // TODO handle non-primary volumes
             }
             // DownloadsProvider
             else if (isDownloadsDocument(uri)) {
