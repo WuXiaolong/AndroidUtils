@@ -1,6 +1,6 @@
 package com.wuxiaolong.androidutils.library;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
@@ -12,12 +12,12 @@ public class VersionUtil {
     /**
      * 获取版本号
      *
-     * @param activity
+     * @param context
      * @return
      */
-    public static String getVersionName(Activity activity) {
-        PackageManager packageManager = activity.getPackageManager();
-        String packageName = activity.getPackageName();
+    public static String getVersionName(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        String packageName = context.getPackageName();
         try {
             PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
             return packageInfo.versionName;
@@ -30,12 +30,12 @@ public class VersionUtil {
     /**
      * 获取版本code
      *
-     * @param activity
+     * @param context
      * @return
      */
-    public static int getVersionCode(Activity activity) {
-        PackageManager packageManager = activity.getPackageManager();
-        String packageName = activity.getPackageName();
+    public static int getVersionCode(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        String packageName = context.getPackageName();
         try {
             PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
             return packageInfo.versionCode;

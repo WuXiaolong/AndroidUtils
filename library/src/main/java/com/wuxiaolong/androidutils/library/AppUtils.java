@@ -1,6 +1,5 @@
 package com.wuxiaolong.androidutils.library;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -26,17 +25,17 @@ public class AppUtils {
     /**
      * FilePath To Bitmap
      *
-     * @param activity
+     * @param context
      * @param filePath
      */
-    public static Bitmap getBitmapFromFilePath(Activity activity, String filePath) {
+    public static Bitmap getBitmapFromFilePath(Context context, String filePath) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
 
         int bmpWidth = options.outWidth;
         int bmpHeght = options.outHeight;
 
-        WindowManager windowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
         int screenWidth = metrics.widthPixels;

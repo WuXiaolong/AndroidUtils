@@ -8,6 +8,32 @@ import java.util.regex.Pattern;
  * 提供验证邮箱、手机号、电话号码、身份证号码、数字等方法
  */
 public final class RegexUtils {
+
+    /**
+     * 手机号码，中间4位星号替换
+     *
+     * @param phone 手机号
+     * @return
+     */
+    public static String phoneNoHide(String phone) {
+        // 括号表示组，被替换的部分$n表示第n组的内容
+        // 正则表达式中，替换字符串，括号的意思是分组，在replace()方法中，
+        // 参数二中可以使用$n(n为数字)来依次引用模式串中用括号定义的字串。
+        // "(\d{3})\d{4}(\d{4})", "$1****$2"的这个意思就是用括号，
+        // 分为(前3个数字)中间4个数字(最后4个数字)替换为(第一组数值，保持不变$1)(中间为*)(第二组数值，保持不变$2)
+        return phone.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+    }
+
+    /**
+     * 银行卡号，保留最后4位，其他星号替换
+     *
+     * @param cardId 卡号
+     * @return
+     */
+    public static String cardIdHide(String cardId) {
+        return cardId.replaceAll("\\d{15}(\\d{3})", "**** **** **** **** $1");
+    }
+
     /**
      * 是否为车牌号（沪A88888）
      */

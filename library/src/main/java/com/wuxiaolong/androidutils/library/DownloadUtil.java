@@ -1,6 +1,5 @@
 package com.wuxiaolong.androidutils.library;
 
-import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,23 +19,23 @@ import android.widget.Toast;
  * on 2016/5/4.
  */
 public class DownloadUtil {
-    private Activity mActivity;
+    private Context mContext;
     private String downloadFileName = "weiyan.apk";
     private static long myReference;
     private static DownloadManager downloadManager;
     private DownloadManager.Request downloadRequest;
 
-    public DownloadUtil(Activity activity, String downloadUrl) {
-        this.mActivity = activity;
+    public DownloadUtil(Context context, String downloadUrl) {
+        this.mContext = context;
         initDownload(downloadUrl);
     }
 
     private void initDownload(String downloadUrl) {
-        downloadManager = (DownloadManager) mActivity.getSystemService(Context.DOWNLOAD_SERVICE);
+        downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(downloadUrl);//"http://app.mi.com/download/25323"
         downloadRequest = new DownloadManager.Request(uri);
         // 设置目标存储在外部目录，一般位置可以用
-        downloadRequest.setDestinationInExternalFilesDir(mActivity, Environment.DIRECTORY_DOWNLOADS, downloadFileName);
+        downloadRequest.setDestinationInExternalFilesDir(mContext, Environment.DIRECTORY_DOWNLOADS, downloadFileName);
         //下载的文件能被其他应用扫描到
         downloadRequest.allowScanningByMediaScanner();
         //设置被系统的Downloads应用扫描到并管理,默认true
@@ -103,7 +102,7 @@ public class DownloadUtil {
 
     public void setDownloadFileName(String downloadFileName) {
         // 设置目标存储在外部目录，一般位置可以用
-        downloadRequest.setDestinationInExternalFilesDir(mActivity, Environment.DIRECTORY_DOWNLOADS, downloadFileName);
+        downloadRequest.setDestinationInExternalFilesDir(mContext, Environment.DIRECTORY_DOWNLOADS, downloadFileName);
     }
 
     public void setNotificationTitle(CharSequence title) {

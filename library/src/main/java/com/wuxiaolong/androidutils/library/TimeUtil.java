@@ -121,7 +121,7 @@ public class TimeUtil {
      * @param format      如"yyyy-MM-dd HH:mm:ss"
      * @return
      */
-    public static String millisecond2String(long millisecond, String format) {
+    public static String millisecond2String(Object millisecond, String format) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());
         return simpleDateFormat.format(millisecond);
     }
