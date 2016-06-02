@@ -6,9 +6,9 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 101
-        versionName "1.0.1"
+        targetSdkVersion 22
+        versionCode 102
+        versionName "1.0.2"
         buildConfigField 'String', 'TAG', '"wxl"'
         buildConfigField 'boolean', 'LOG', 'true'
     }
@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //Lint 检查默认是开启的，Lint 会检查项目中的语法错误，如果没有通过则无法继续。
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -26,8 +30,10 @@ dependencies {
 }
 //http://www.cnblogs.com/baron89/p/4662066.html
 task androidJavadocs(type: Javadoc) {
+    //javadoc 的依赖问题
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    //GBK 编码问题,无法映射的GBK编码
     allprojects {
         tasks.withType(Javadoc) {
             options.encoding = "UTF-8"
@@ -45,7 +51,7 @@ publish {
     //项目名称
     artifactId = 'androidutils'
     //版本号
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     //描述，不重要
     desc = '个人收藏-工具类'
     //网站，不重要

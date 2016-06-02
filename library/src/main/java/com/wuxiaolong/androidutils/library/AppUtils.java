@@ -25,8 +25,8 @@ public class AppUtils {
     /**
      * FilePath To Bitmap
      *
-     * @param context
-     * @param filePath
+     * @param context  上下文
+     * @param filePath 文件路径
      */
     public static Bitmap getBitmapFromFilePath(Context context, String filePath) {
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -89,8 +89,8 @@ public class AppUtils {
     /**
      * MD5加密
      *
-     * @param plainText
-     * @return
+     * @param plainText 需要加密的字符串
+     * @return 加密后字符串
      */
     public static String md5(String plainText) {
         String result = "";
@@ -123,8 +123,8 @@ public class AppUtils {
     /**
      * 安装apk
      *
-     * @param context
-     * @param path
+     * @param context 上下文
+     * @param path    文件路劲
      */
     public static void installAPK(Context context, String path) {
         Intent intent = new Intent();
@@ -133,4 +133,29 @@ public class AppUtils {
         intent.setDataAndType(Uri.fromFile(new File(path)), "application/vnd.android.package-archive");
         context.startActivity(intent);
     }
+
+    /**
+     * 直接拨号，需要增加CALL_PHONE权限
+     *
+     * @param context 上下文
+     * @param phone   手机号码
+     */
+    public static void actionCall(Context context, String phone) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
+        intent.setAction(Intent.ACTION_CALL);// 直接拨号
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳到拨号盘-拨打电话
+     *
+     * @param context 上下文
+     * @param phone   手机号码
+     */
+    public static void actionDial(Context context, String phone) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
+        intent.setAction(Intent.ACTION_DIAL);// 拨号盘
+        context.startActivity(intent);
+    }
+
 }

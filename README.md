@@ -96,8 +96,18 @@ int getVersionCode(Context context)
 ```java
 String md5(String plainText)
 ```
+
 ## 安装apk
 ```java
 void installAPK(Context context, String path)
 ```
 
+### 直接拨号，需要增加CALL_PHONE权限
+```java
+void actionCall(Context context, String phone)
+```
+
+### 跳到拨号盘-拨打电话
+```
+void actionDial(Context context, String phone)
+```

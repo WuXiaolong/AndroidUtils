@@ -9,8 +9,8 @@ public class CheckIdCard {
     /**
      * 校验银行卡卡号
      *
-     * @param cardId
-     * @return
+     * @param cardId 卡号
+     * @return 是否有效卡号
      */
     public static boolean checkBankCard(String cardId) {
         char bit = getBankCardCheckCode(cardId
