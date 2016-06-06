@@ -2,7 +2,7 @@
 
 #Gradle依赖
 ```java
-compile 'com.wuxiaolong.androidutils:androidutils:1.0.1'
+compile 'com.wuxiaolong.androidutils:androidutils:1.0.2'
 ```
 # 功能简介
 ## DisplayMetricsUtil
