@@ -5,6 +5,28 @@
 compile 'com.wuxiaolong.androidutils:androidutils:1.0.2'
 ```
 # 功能简介
+
+## AppUtils
+工具类集合，不好单独起名都放在AppUtils里
+### MD5加密
+```java
+String md5(String plainText)
+```
+
+## 安装apk
+```java
+void installAPK(Context context, String path)
+```
+
+### 直接拨号，需要增加CALL_PHONE权限
+```java
+void actionCall(Context context, String phone)
+```
+
+### 跳到拨号盘-拨打电话
+```
+void actionDial(Context context, String phone)
+```
 ## DisplayMetricsUtil
 ### 获取屏幕分辨率-宽
 ```java
@@ -90,24 +112,3 @@ String getVersionName(Context context)
 int getVersionCode(Context context)
 ```
 
-## AppUtils
-工具类集合，不好单独起名都放在AppUtils里
-### MD5加密
-```java
-String md5(String plainText)
-```
-
-## 安装apk
-```java
-void installAPK(Context context, String path)
-```
-
-### 直接拨号，需要增加CALL_PHONE权限
-```java
-void actionCall(Context context, String phone)
-```
-
-### 跳到拨号盘-拨打电话
-```
-void actionDial(Context context, String phone)
-```
