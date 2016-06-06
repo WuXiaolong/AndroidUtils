@@ -1,5 +1,6 @@
 package com.wuxiaolong.androidutils.library;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,19 +9,44 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DecimalFormat;
 
 /**
  * Created by WuXiaolong
  * on 2016/3/22.
  */
 public class AppUtils {
+    /**
+     * 关闭键盘
+     *
+     * @param activity Activity
+     */
+    public static void hideSoftInput(Activity activity) {
+        if (activity.getCurrentFocus() != null)
+            ((InputMethodManager) activity
+                    .getSystemService(Context.INPUT_METHOD_SERVICE))
+                    .hideSoftInputFromWindow(activity.getCurrentFocus()
+                            .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
 
+    /**
+     * 指定小数输出
+     *
+     * @param s      输入
+     * @param format 小数格式，比如保留两位0.00
+     * @return 输出结果
+     */
+    public static String decimalFormat(String s, String format) {
+        DecimalFormat decimalFormat = new DecimalFormat(format);
+        return decimalFormat.format(s);
+    }
 
     /**
      * FilePath To Bitmap
