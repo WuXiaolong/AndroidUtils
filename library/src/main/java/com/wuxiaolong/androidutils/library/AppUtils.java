@@ -48,62 +48,12 @@ public class AppUtils {
         return decimalFormat.format(s);
     }
 
-    /**
-     * FilePath To Bitmap
-     *
-     * @param context  上下文
-     * @param filePath 文件路径
-     */
-    public static Bitmap getBitmapFromFilePath(Context context, String filePath) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-
-        int bmpWidth = options.outWidth;
-        int bmpHeght = options.outHeight;
-
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics metrics = new DisplayMetrics();
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-        int screenWidth = metrics.widthPixels;
-        int screenHeight = metrics.heightPixels;
-
-        options.inSampleSize = 1;
-        if (bmpWidth > bmpHeght) {
-            if (bmpWidth > screenWidth)
-                options.inSampleSize = bmpWidth / screenWidth;
-        } else {
-            if (bmpHeght > screenHeight)
-                options.inSampleSize = bmpHeght / screenHeight;
-        }
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeFile(filePath, options);
-    }
-
-    /**
-     * Bitmap to File
-     *
-     * @param bitmap
-     */
-    public static String bitmap2File(Bitmap bitmap) {
-
-        File outDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        if (!outDir.exists()) {
-            outDir.mkdirs();
-        }
-        File outFile = new File(outDir, System.currentTimeMillis() + ".jpg");
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(outFile);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 40, fileOutputStream);
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return outFile.getAbsolutePath();
-    }
 
     /**
      * 把Bitmap转Byte
+     *
+     * @param bitmap bitmap对象
+     * @return Bytes
      */
     public static byte[] bitmap2Bytes(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

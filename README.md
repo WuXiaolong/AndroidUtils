@@ -5,6 +5,11 @@
 compile 'com.wuxiaolong.androidutils:androidutils:1.0.2'
 ```
 # 功能简介
+## BitmapCompressUtil
+图片压缩类
+
+## ArithUtil
+算术类，包括加减乘除
 
 ## AppUtils
 工具类集合，不好单独起名都放在AppUtils里

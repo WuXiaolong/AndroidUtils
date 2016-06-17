@@ -1,4 +1,4 @@
-package com.juyoulicai.util;
+package com.wuxiaolong.androidutils.library;
 
 //~--- JDK imports ------------------------------------------------------------
 
@@ -8,13 +8,13 @@ import java.math.BigDecimal;
  * Allen
  * float double 数值不能计算
  */
-public class Arith {
+public class ArithUtil {
 
     // 默认除法运算精度
     private static final int DEF_DIV_SCALE = 10;
 
     // 这个类不能实例化
-    private Arith() {
+    private ArithUtil() {
         ;
     }
 

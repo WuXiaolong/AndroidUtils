@@ -16,6 +16,11 @@ import android.provider.MediaStore;
  * on 2016/5/20.
  */
 public class AbsolutePathUtil {
+    /**
+     * @param context 上下文
+     * @param uri     url对象
+     * @return 绝对路径
+     */
     public static String getAbsolutePath(final Context context, final Uri uri) {
         // DocumentProvider
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && DocumentsContract.isDocumentUri(context, uri)) {
