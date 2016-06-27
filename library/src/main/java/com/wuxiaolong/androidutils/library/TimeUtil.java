@@ -116,13 +116,47 @@ public class TimeUtil {
 
     /**
      * 毫秒格式化
+     * 使用unixTimestamp2BeijingTime方法
      *
      * @param millisecond 如"1449455517602"
      * @param format      如"yyyy-MM-dd HH:mm:ss"
      * @return
      */
+    @Deprecated
     public static String millisecond2String(Object millisecond, String format) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());
         return simpleDateFormat.format(millisecond);
+    }
+
+    /**
+     * 时间戳转北京时间
+     *
+     * @param millisecond 如"1449455517602"
+     * @param format      如"yyyy-MM-dd HH:mm:ss"
+     * @return
+     */
+    public static String unixTimestamp2BeijingTime(Object millisecond, String format) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());
+        return simpleDateFormat.format(millisecond);
+    }
+
+    /**
+     * 北京时间转时间戳
+     * 注意第一个参数和第二个参数格式必须一样
+     *
+     * @param beijingTime 如"2016-6-26 20:35:9"
+     * @param format      如"yyyy-MM-dd HH:mm:ss"
+     * @return 时间戳
+     */
+    public static long beijingTime2UnixTimestamp(String beijingTime, String format) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());
+        long unixTimestamp = 0;
+        try {
+            Date date = simpleDateFormat.parse(beijingTime);
+            unixTimestamp = date.getTime() / 1000;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return unixTimestamp;
     }
 }
