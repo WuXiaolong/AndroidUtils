@@ -18,10 +18,10 @@ import java.io.FileOutputStream;
  * new BitmapCompressUtil(MainActivity.this).bitmapCompress("/storage/sdcard0/dcim/Camera/IMG_20160518_083759.jpg",
  * new BitmapCompressUtil.BitmapCompressCallback() {
  *
- * @Override public void onCompressSuccess(String fileOutputPath) {
+ * public void onCompressSuccess(String fileOutputPath) {
  * LogUtil.d("fileOutputPath=" + fileOutputPath);
  * }
- * @Override public void onCompressFailure(String t) {
+ * public void onCompressFailure(String t) {
  * LogUtil.d("onCompressFailure=" + t);
  * }
  * });

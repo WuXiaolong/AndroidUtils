@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 102
-        versionName "1.0.2"
+        versionCode 103
+        versionName "1.0.3"
         buildConfigField 'String', 'TAG', '"wxl"'
         buildConfigField 'boolean', 'LOG', 'true'
     }
@@ -51,7 +51,7 @@ publish {
     //项目名称
     artifactId = 'androidutils'
     //版本号
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     //描述，不重要
     desc = '个人收藏-工具类'
     //网站，不重要

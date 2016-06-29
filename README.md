@@ -2,7 +2,7 @@
 
 #Gradle依赖
 ```java
-compile 'com.wuxiaolong.androidutils:androidutils:1.0.2'
+compile 'com.wuxiaolong.androidutils:androidutils:1.0.3'
 ```
 # 功能简介
 ##  v1.0.3
