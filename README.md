@@ -5,6 +5,47 @@
 compile 'com.wuxiaolong.androidutils:androidutils:1.0.3'
 ```
 # 功能简介
+## v1.0.4
+### 完全退出
+```java
+public class BaseActivity extends AppCompatActivity {
+    public ActivityManagerUtil activityManagerUtil;
+    public Activity mActivity;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_base);
+        mActivity = this;
+        activityManagerUtil = ActivityManagerUtil.getInstance();
+        activityManagerUtil.pushOneActivity(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //结束Activity&从栈中移除该Activity
+        activityManagerUtil.popOneActivity(this);
+    }
+
+}
+```
+
+### 全局异常捕获
+```java
+public class AndroidUtilsApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //崩溃处理
+        CrashHandlerUtil crashHandlerUtil = CrashHandlerUtil.getInstance();
+        crashHandlerUtil.init(this);
+        crashHandlerUtil.setCrashTip("很抱歉，程序出现异常，即将退出！");
+    }
+}
+```
+
 ##  v1.0.3
 ### TimeUtil
 #### 时间戳转北京时间

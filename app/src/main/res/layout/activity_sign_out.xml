@@ -7,14 +7,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.wuxiaolong.androidutils.MainActivity">
+    tools:context="com.wuxiaolong.androidutils.SignOutActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="146dp"
-        android:text="跳转" />
+        android:text="完全退出" />
+
+    <Button
+        android:id="@+id/crashHandler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="全局异常捕获" />
 </RelativeLayout>
