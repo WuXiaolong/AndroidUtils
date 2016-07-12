@@ -23,6 +23,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.0.0'
-    compile project(':library')
+//    compile project(':library')
 //    compile 'com.wuxiaolong.androidutils:androidutils:1.0.3'
 }
