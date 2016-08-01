@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class NetConnectUtils {
 
     /**

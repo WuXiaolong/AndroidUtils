@@ -5,6 +5,7 @@ package com.wuxiaolong.androidutils.library;
  * Created by WuXiaolong
  * on 2016/5/22.
  */
+@SuppressWarnings("unused")
 public class CheckIdCard {
     /**
      * 校验银行卡卡号

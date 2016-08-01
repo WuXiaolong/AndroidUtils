@@ -8,6 +8,7 @@ import java.math.BigDecimal;
  * Allen
  * float double 数值不能计算
  */
+@SuppressWarnings("unused")
 public class ArithUtil {
 
     // 默认除法运算精度

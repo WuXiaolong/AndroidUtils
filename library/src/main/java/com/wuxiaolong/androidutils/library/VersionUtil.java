@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
  * Created by Administrator
  * on 2016/5/24.
  */
+@SuppressWarnings("unused")
 public class VersionUtil {
     /**
      * 获取版本号

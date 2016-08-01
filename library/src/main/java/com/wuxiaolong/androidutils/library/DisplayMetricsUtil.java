@@ -9,6 +9,7 @@ import android.view.WindowManager;
  * Created by Administrator
  * on 2016/5/25.
  */
+@SuppressWarnings("unused")
 public class DisplayMetricsUtil {
 
 

@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
  * public class AndroidUtilsApplication extends Application {
- *
+ * <p>
  * public void onCreate() {
  * super.onCreate();
  * //崩溃处理
@@ -37,6 +37,7 @@ import java.util.Map;
  * Created by Administrator
  * on 2016/5/19.
  */
+@SuppressWarnings("unused")
 public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
     public static final String TAG = "CrashHandlerUtil";

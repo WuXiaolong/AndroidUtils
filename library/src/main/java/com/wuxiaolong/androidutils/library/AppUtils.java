@@ -22,6 +22,7 @@ import java.text.DecimalFormat;
  * Created by WuXiaolong
  * on 2016/3/22.
  */
+@SuppressWarnings("unused")
 public class AppUtils {
     /**
      * 关闭键盘
@@ -43,7 +44,7 @@ public class AppUtils {
      * @param format 小数格式，比如保留两位0.00
      * @return 输出结果
      */
-    public static String decimalFormat(String s, String format) {
+    public static String decimalFormat(double s, String format) {
         DecimalFormat decimalFormat = new DecimalFormat(format);
         return decimalFormat.format(s);
     }

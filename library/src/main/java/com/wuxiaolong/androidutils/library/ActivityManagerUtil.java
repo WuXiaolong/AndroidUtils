@@ -16,13 +16,13 @@ import java.util.Stack;
  * }
  * protected void onDestroy() {
  * super.onDestroy();
- * //结束Activity&从栈中移除该Activity
  * activityManagerUtil.popOneActivity(this);
  * }
  * }
  * Created by Administrator
  * on 2016/5/19.
  */
+@SuppressWarnings("unused")
 public class ActivityManagerUtil {
     private static ActivityManagerUtil instance;
     //activity栈
@@ -117,7 +117,7 @@ public class ActivityManagerUtil {
     public void appExit() {
         try {
             finishAllActivity();
-            //退出JVM（java虚拟机）,释放所占内存资源,0表示正常退出(非0的都为异常退出)
+            //退出JVM(java虚拟机),释放所占内存资源,0表示正常退出(非0的都为异常退出)
             System.exit(0);
             //从操作系统中结束掉当前程序的进程
             android.os.Process.killProcess(android.os.Process.myPid());

@@ -15,6 +15,7 @@ import android.provider.MediaStore;
  * Created by WuXiaolong
  * on 2016/5/20.
  */
+@SuppressWarnings("unused")
 public class AbsolutePathUtil {
     /**
      * @param context 上下文

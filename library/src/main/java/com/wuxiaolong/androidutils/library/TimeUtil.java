@@ -12,6 +12,7 @@ import java.util.Locale;
  * Created by WuXiaolong
  * on 2016/5/20.
  */
+@SuppressWarnings("unused")
 public class TimeUtil {
     /**
      * 获取当前时间

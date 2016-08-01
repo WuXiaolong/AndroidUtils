@@ -18,6 +18,7 @@ import android.widget.Toast;
  * Created by Administrator
  * on 2016/5/4.
  */
+@SuppressWarnings("unused")
 public class DownloadUtil {
     private Context mContext;
     private String downloadFileName = "weiyan.apk";

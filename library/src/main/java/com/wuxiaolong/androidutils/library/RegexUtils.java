@@ -7,13 +7,14 @@ import java.util.regex.Pattern;
  * 正则工具类-http://blog.csdn.net/xyang81/article/details/7706408
  * 提供验证邮箱、手机号、电话号码、身份证号码、数字等方法
  */
+@SuppressWarnings("unused")
 public final class RegexUtils {
 
     /**
      * 手机号码，中间4位星号替换
      *
      * @param phone 手机号
-     * @return
+     * @return 星号替换的手机号
      */
     public static String phoneNoHide(String phone) {
         // 括号表示组，被替换的部分$n表示第n组的内容
@@ -28,15 +29,29 @@ public final class RegexUtils {
      * 银行卡号，保留最后4位，其他星号替换
      *
      * @param cardId 卡号
-     * @return
+     * @return 星号替换的银行卡号
      */
     public static String cardIdHide(String cardId) {
         return cardId.replaceAll("\\d{15}(\\d{3})", "**** **** **** **** $1");
     }
 
     /**
-     * 是否为车牌号（沪A88888）
+     * 身份证号，中间10位星号替换
+     *
+     * @param id 身份证号
+     * @return 星号替换的身份证号
      */
+    public static String IdHide(String id) {
+        return id.replaceAll("(\\d{4})\\d{10}(\\d{4})", "$1** **** ****$2");
+    }
+
+    /**
+     * 是否为车牌号（沪A88888）
+     *
+     * @param vehicleNo 车牌号
+     * @return 是否为车牌号
+     */
+
     public static boolean checkVehicleNo(String vehicleNo) {
         Pattern pattern = Pattern.compile("^[\u4e00-\u9fa5]{1}[a-zA-Z]{1}[a-zA-Z_0-9]{5}$");
         return pattern.matcher(vehicleNo).find();

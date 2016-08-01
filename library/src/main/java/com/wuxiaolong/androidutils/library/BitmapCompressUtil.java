@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
  * 使用方法：
  * new BitmapCompressUtil(MainActivity.this).bitmapCompress("/storage/sdcard0/dcim/Camera/IMG_20160518_083759.jpg",
  * new BitmapCompressUtil.BitmapCompressCallback() {
- *
+ * <p>
  * public void onCompressSuccess(String fileOutputPath) {
  * LogUtil.d("fileOutputPath=" + fileOutputPath);
  * }
@@ -28,6 +28,7 @@ import java.io.FileOutputStream;
  * Created by WuXiaolong
  * on 2016/6/17.
  */
+@SuppressWarnings("unused")
 public class BitmapCompressUtil {
     private Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
     private int compressQuality = 50;
