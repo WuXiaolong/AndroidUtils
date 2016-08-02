@@ -41,7 +41,7 @@ public final class RegexUtil {
      * @param id 身份证号
      * @return 星号替换的身份证号
      */
-    public static String IdHide(String id) {
+    public static String idHide(String id) {
         return id.replaceAll("(\\d{4})\\d{10}(\\d{4})", "$1** **** ****$2");
     }
 
