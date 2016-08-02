@@ -13,8 +13,8 @@ public class VersionUtil {
     /**
      * 获取版本号
      *
-     * @param context
-     * @return
+     * @param context 上下文
+     * @return 版本号
      */
     public static String getVersionName(Context context) {
         PackageManager packageManager = context.getPackageManager();
@@ -31,8 +31,8 @@ public class VersionUtil {
     /**
      * 获取版本code
      *
-     * @param context
-     * @return
+     * @param context 上下文
+     * @return 版本code
      */
     public static int getVersionCode(Context context) {
         PackageManager packageManager = context.getPackageManager();

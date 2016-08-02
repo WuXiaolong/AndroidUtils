@@ -180,3 +180,6 @@ int getVersionCode(Context context)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
+
+# Licenses
+[Apache-2.0](https://opensource.org/licenses/apache2.0.php)

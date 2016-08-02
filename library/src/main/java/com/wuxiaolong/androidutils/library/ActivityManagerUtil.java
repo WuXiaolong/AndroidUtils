@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * public class BaseActivity extends AppCompatActivity {
  * private ActivityManagerUtil activityManagerUtil;
- *
+ * <p/>
  * protected void onCreate(Bundle savedInstanceState) {
  * super.onCreate(savedInstanceState);
  * setContentView(R.layout.activity_base);
@@ -30,6 +30,8 @@ public class ActivityManagerUtil {
 
     /**
      * 单例模式
+     *
+     * @return 单例
      */
 
     public static ActivityManagerUtil getInstance() {
@@ -41,20 +43,21 @@ public class ActivityManagerUtil {
 
     /**
      * 把一个activity压入栈中
+     *
+     * @param actvity activity
      */
     public void pushOneActivity(Activity actvity) {
         if (activityStack == null) {
             activityStack = new Stack<>();
         }
         activityStack.add(actvity);
-        for (Activity activity : activityStack) {
-            LogUtil.d(activity.getLocalClassName());
-        }
     }
 
 
     /**
      * 移除一个activity
+     *
+     * @param activity activity
      */
     public void popOneActivity(Activity activity) {
         if (activityStack != null && activityStack.size() > 0) {
@@ -67,6 +70,8 @@ public class ActivityManagerUtil {
 
     /**
      * 获取栈顶的activity，先进后出原则
+     *
+     * @return 栈顶的activity
      */
     public Activity getLastActivity() {
         return activityStack.lastElement();
@@ -74,17 +79,20 @@ public class ActivityManagerUtil {
 
     /**
      * 结束指定的Activity
+     *
+     * @param activity activity
      */
     public void finishActivity(Activity activity) {
         if (activity != null) {
             activityStack.remove(activity);
             activity.finish();
-            activity = null;
         }
     }
 
     /**
      * 结束指定类名的Activity
+     *
+     * @param cls 指定的Activity
      */
     public void finishActivity(Class<?> cls) {
         for (Activity activity : activityStack) {

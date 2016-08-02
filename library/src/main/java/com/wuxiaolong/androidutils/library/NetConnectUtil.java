@@ -8,12 +8,13 @@ import android.net.NetworkInfo;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class NetConnectUtils {
+public class NetConnectUtil {
 
     /**
      * 检测网络是否连接
      *
-     * @return
+     * @param context 上下文
+     * @return 结果
      */
     public static boolean isNetConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -30,7 +31,8 @@ public class NetConnectUtils {
     /**
      * 检测wifi是否连接
      *
-     * @return
+     * @param context 上下文
+     * @return 结果
      */
     public boolean isWifiConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -47,7 +49,8 @@ public class NetConnectUtils {
     /**
      * 检测3G是否连接
      *
-     * @return
+     * @param context 上下文
+     * @return 结果
      */
     public boolean is3gConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -64,7 +67,8 @@ public class NetConnectUtils {
     /**
      * 检测GPS是否打开
      *
-     * @return
+     * @param context 上下文
+     * @return 结果
      */
     public static boolean isGpsEnabled(Context context) {
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);

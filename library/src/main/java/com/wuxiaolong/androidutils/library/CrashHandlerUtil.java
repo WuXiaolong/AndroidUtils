@@ -25,7 +25,7 @@ import java.util.Map;
 /**
  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
  * public class AndroidUtilsApplication extends Application {
- * <p>
+ * <p/>
  * public void onCreate() {
  * super.onCreate();
  * //崩溃处理
@@ -71,6 +71,8 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
     /**
      * 获取CrashHandler实例 ,单例模式
+     *
+     * @return 单例
      */
     public static CrashHandlerUtil getInstance() {
         return INSTANCE;
@@ -91,6 +93,9 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
     /**
      * 当UncaughtException发生时会转入该函数来处理
+     *
+     * @param thread 线程
+     * @param ex     异常
      */
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
@@ -112,7 +117,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
     /**
      * 自定义错误处理,收集错误信息 发送错误报告等操作均在此完成.
      *
-     * @param throwable
+     * @param throwable 异常
      * @return true:如果处理了该异常信息;否则返回false.
      */
     private boolean handleException(final Throwable throwable) {
@@ -139,7 +144,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
     /**
      * 收集设备参数信息
      *
-     * @param ctx
+     * @param ctx 上下文
      */
     public void collectDeviceInfo(Context ctx) {
         try {
@@ -169,7 +174,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
     /**
      * 保存错误信息到文件中
      *
-     * @param ex
+     * @param ex 异常
      * @return 返回文件名称, 便于将文件传送到服务器
      */
     private String saveCrashInfo2File(Throwable ex) {

@@ -125,6 +125,8 @@ public class DownloadUtil {
      * Notification或者消除该Notification。
      * Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION：只有在下载完成后该Notification才会被显示。
      * Request.VISIBILITY_HIDDEN：不显示该下载请求的Notification。如果要使用这个参数，需要在应用的清单文件中加上android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+     *
+     * @param visibility 显示标识
      */
     public void setNotificationVisibility(int visibility) {
 

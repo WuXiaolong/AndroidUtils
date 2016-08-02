@@ -18,6 +18,7 @@ public class TimeUtil {
      * 获取当前时间
      *
      * @param format "yyyy-MM-dd HH:mm:ss"
+     * @return 当前时间
      */
     public static String getCurrentTime(String format) {
         Date date = new Date();
@@ -27,6 +28,8 @@ public class TimeUtil {
 
     /**
      * 获取当前时间为本月的第几周
+     *
+     * @return WeekOfMonth
      */
     public static int getWeekOfMonth() {
         Calendar calendar = Calendar.getInstance();
@@ -36,6 +39,8 @@ public class TimeUtil {
 
     /**
      * 获取当前时间为本周的第几天
+     *
+     * @return DayOfWeek
      */
     public static int getDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
@@ -50,6 +55,8 @@ public class TimeUtil {
 
     /**
      * 获取当前时间的年份
+     *
+     * @return 年份
      */
     public static int getYear() {
         Calendar calendar = GregorianCalendar.getInstance();
@@ -58,6 +65,8 @@ public class TimeUtil {
 
     /**
      * 获取当前时间的月份
+     *
+     * @return 月份
      */
     public static int getMonth() {
         Calendar calendar = GregorianCalendar.getInstance();
@@ -66,6 +75,8 @@ public class TimeUtil {
 
     /**
      * 获取当前时间是哪天
+     *
+     * @return 哪天
      */
     public static int getDay() {
         Calendar calendar = GregorianCalendar.getInstance();
@@ -73,8 +84,11 @@ public class TimeUtil {
     }
 
     /**
-     * @param date1
-     * @param date2
+     * 时间比较大小
+     *
+     * @param date1 date1
+     * @param date2 date2
+     * @param format "yyyy-MM-dd HH:mm:ss"
      * @return 1:date1大于date2；
      * -1:date1小于date2
      */
@@ -101,7 +115,7 @@ public class TimeUtil {
      *
      * @param day       如"2015-09-22"
      * @param dayAddNum 加减值
-     * @return
+     * @return 结果
      */
     public static String timeAddSubtract(String day, int dayAddNum) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -121,7 +135,7 @@ public class TimeUtil {
      *
      * @param millisecond 如"1449455517602"
      * @param format      如"yyyy-MM-dd HH:mm:ss"
-     * @return
+     * @return 格式化结果
      */
     @Deprecated
     public static String millisecond2String(Object millisecond, String format) {
@@ -134,7 +148,7 @@ public class TimeUtil {
      *
      * @param millisecond 如"1449455517602"
      * @param format      如"yyyy-MM-dd HH:mm:ss"
-     * @return
+     * @return 格式化结果
      */
     public static String unixTimestamp2BeijingTime(Object millisecond, String format) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());

@@ -6,7 +6,7 @@ package com.wuxiaolong.androidutils.library;
  * on 2016/5/22.
  */
 @SuppressWarnings("unused")
-public class CheckIdCard {
+public class CheckIdCardUtil {
     /**
      * 校验银行卡卡号
      *
@@ -16,17 +16,14 @@ public class CheckIdCard {
     public static boolean checkBankCard(String cardId) {
         char bit = getBankCardCheckCode(cardId
                 .substring(0, cardId.length() - 1));
-        if (bit == 'N') {
-            return false;
-        }
-        return cardId.charAt(cardId.length() - 1) == bit;
+        return bit != 'N' && cardId.charAt(cardId.length() - 1) == bit;
     }
 
     /**
      * 从不含校验位的银行卡卡号采用 Luhm 校验算法获得校验位
      *
-     * @param nonCheckCodeCardId
-     * @return
+     * @param nonCheckCodeCardId 不含校验位的银行卡
+     * @return 校验结果
      */
     public static char getBankCardCheckCode(String nonCheckCodeCardId) {
         if (nonCheckCodeCardId == null
