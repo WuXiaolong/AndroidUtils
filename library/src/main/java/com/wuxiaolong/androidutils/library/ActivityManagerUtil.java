@@ -7,7 +7,6 @@ import java.util.Stack;
 /**
  * public class BaseActivity extends AppCompatActivity {
  * private ActivityManagerUtil activityManagerUtil;
- * <p/>
  * protected void onCreate(Bundle savedInstanceState) {
  * super.onCreate(savedInstanceState);
  * setContentView(R.layout.activity_base);
