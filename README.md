@@ -218,6 +218,30 @@ String getVersionName(Context context)
 int getVersionCode(Context context)
 ```
 
+## MediaUtil
+多媒体工具类
+
+### 打开系统拍照
+``` java
+void startActivityForCamera(Activity activity, int requestCode, Uri outputUri)
+void startActivityForCamera(Activity activity, int requestCode)
+```
+
+### 打开系统相册
+``` java
+void startActivityForGallery(Activity activity, int requestCode)
+```
+
+### 打开系统裁剪
+``` java
+void startActivityForImageCut(Activity activity, int requestCode,
+                                          Uri inputUri, Uri outputUri,
+                                          int width, int height)
+```
+
+## UriUtil
+Uri工具类
+
 # 微信公众号
 欢迎微信扫一扫关注：不止于技术分享，每天进步一点点。
 
