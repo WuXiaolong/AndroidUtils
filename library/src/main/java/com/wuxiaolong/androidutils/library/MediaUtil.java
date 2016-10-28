@@ -7,7 +7,8 @@ import android.net.Uri;
 import android.provider.MediaStore;
 
 /**
- * Created by xdj on 16/8/28.
+ * Created by xdj
+ * on 16/8/28.
  */
 @SuppressWarnings("unused")
 public class MediaUtil {

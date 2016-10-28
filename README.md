@@ -141,6 +141,17 @@ String getAbsolutePath(final Context context, final Uri uri)
 ```
 
 ## DownloadUtil
+步骤1：
+```java
+AndroidManifest注册
+<receiver android:name="com.wuxiaolong.androidutils.library.DownloadUtil$DownloadManagerReceiver">
+<intent-filter>
+<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+<action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+</intent-filter>
+</receiver>
+```
+步骤2：
 调用DownloadManager下载
 ```java
 DownloadUtil downloadUtil = new DownloadUtil(content, downloadUrl);
