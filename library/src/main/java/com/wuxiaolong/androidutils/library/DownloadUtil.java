@@ -10,23 +10,24 @@ import android.os.Environment;
 import android.widget.Toast;
 
 /**
- * 步骤1：
- * AndroidManifest注册
- * <receiver android:name="com.wuxiaolong.androidutils.library.DownloadUtil$DownloadManagerReceiver">
- * <intent-filter>
- * <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
- * <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
- * </intent-filter>
- * </receiver>
- * 步骤2：
- * DownloadUtil downloadUtil = new DownloadUtil(activity, downloadUrl);
- * //下载显示名字，不能是中文
- * downloadUtil.setDownloadFileName("apkName" + System.currentTimeMillis() + ".apk");
- * downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
- * downloadUtil.start();
  * Created by Administrator
  * on 2016/5/4.
  */
+//使用步骤1：
+//AndroidManifest注册
+//<receiver android:name="com.wuxiaolong.androidutils.library.DownloadUtil$DownloadManagerReceiver">
+//<intent-filter>
+//<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+//<action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+//</intent-filter>
+//</receiver>
+//步骤2：
+//DownloadUtil downloadUtil=new DownloadUtil(activity,downloadUrl);
+////下载显示名字，不能是中文
+//downloadUtil.setDownloadFileName("apkName"+System.currentTimeMillis()+".apk");
+//downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+//downloadUtil.start();
+
 @SuppressWarnings("unused")
 public class DownloadUtil {
     private Context mContext;

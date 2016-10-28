@@ -1,16 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 105
-        versionName "1.0.5"
+        versionCode 106
+        versionName "1.0.6"
         buildConfigField 'String', 'TAG', '"wxl"'
-        buildConfigField 'boolean', 'LOG', 'true'
     }
     buildTypes {
         release {
@@ -51,7 +50,7 @@ publish {
     //项目名称
     artifactId = 'androidutils'
     //版本号
-    publishVersion = '1.0.5'
+    publishVersion = '1.0.6'
     //描述，不重要
     desc = '个人收藏-工具类'
     //网站，不重要

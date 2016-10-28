@@ -25,21 +25,16 @@ public class FileUtil {
      *
      * @param file file
      * @return size
-     * @throws Exception
      */
     public long getFolderSize(File file) {
         long size = 0;
-        try {
-            File[] fileList = file.listFiles();
-            for (File aFileList : fileList) {
-                if (aFileList.isDirectory()) {
-                    size = size + getFolderSize(aFileList);
-                } else {
-                    size = size + aFileList.length();
-                }
+        File[] fileList = file.listFiles();
+        for (File aFileList : fileList) {
+            if (aFileList.isDirectory()) {
+                size = size + getFolderSize(aFileList);
+            } else {
+                size = size + aFileList.length();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return size;
     }

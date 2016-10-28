@@ -34,7 +34,7 @@ public class NetConnectUtil {
      * @param context 上下文
      * @return 结果
      */
-    public boolean isWifiConnected(Context context) {
+    public static boolean isWifiConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
             NetworkInfo networkInfo = cm.getActiveNetworkInfo();
@@ -52,7 +52,7 @@ public class NetConnectUtil {
      * @param context 上下文
      * @return 结果
      */
-    public boolean is3gConnected(Context context) {
+    public static boolean is3gConnected(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
             NetworkInfo networkInfo = cm.getActiveNetworkInfo();

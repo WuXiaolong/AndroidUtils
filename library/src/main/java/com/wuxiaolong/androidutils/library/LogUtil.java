@@ -7,51 +7,59 @@ package com.wuxiaolong.androidutils.library;
  */
 @SuppressWarnings("unused")
 public class LogUtil {
-    private static final String TAG = BuildConfig.TAG;
-    private static final boolean LOG = BuildConfig.LOG;
+    private static String tag = BuildConfig.TAG;
+    private static boolean log = true;
+
+    public static void setTag(String tag) {
+        LogUtil.tag = tag;
+    }
+
+    public static void setLog(boolean log) {
+        LogUtil.log = log;
+    }
 
     public static void i(String msg) {
-        if (LOG)
-            android.util.Log.i(TAG, msg);
+        if (log)
+            android.util.Log.i(tag, msg);
     }
 
     public static void i(String tag, String msg) {
-        if (LOG)
+        if (log)
             android.util.Log.i(tag, msg);
     }
 
     public static void d(String msg) {
-        if (LOG)
-            android.util.Log.d(TAG, msg);
+        if (log)
+            android.util.Log.d(tag, msg);
     }
 
     public static void d(String tag, String msg) {
-        if (LOG)
+        if (log)
             android.util.Log.d(tag, msg);
     }
 
     public static void w(String msg) {
-        if (LOG)
-            android.util.Log.w(TAG, msg);
+        if (log)
+            android.util.Log.w(tag, msg);
     }
 
     public static void w(String tag, String msg) {
-        if (LOG)
+        if (log)
             android.util.Log.w(tag, msg);
     }
 
     public static void v(String msg) {
-        if (LOG)
-            android.util.Log.v(TAG, msg);
+        if (log)
+            android.util.Log.v(tag, msg);
     }
 
     public static void v(String tag, String msg) {
-        if (LOG)
+        if (log)
             android.util.Log.v(tag, msg);
     }
 
     public static void e(String msg) {
-        android.util.Log.e(TAG, msg);
+        android.util.Log.e(tag, msg);
     }
 
     public static void e(String tag, String msg) {
