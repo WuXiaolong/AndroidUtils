@@ -6,10 +6,11 @@ import android.view.WindowManager;
 
 /**
  * 获取屏幕分辨率
- * Created by Administrator
+ * Created by WuXiaolong
  * on 2016/5/25.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class DisplayMetricsUtil {
 
     /**

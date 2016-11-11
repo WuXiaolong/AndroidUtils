@@ -2,10 +2,11 @@ package com.wuxiaolong.androidutils.library;
 
 
 /**
- * Created by Administrator
+ * Created by WuXiaolong
  * on 2016/4/28.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class LogUtil {
     private static String tag = BuildConfig.TAG;
     private static boolean log = true;

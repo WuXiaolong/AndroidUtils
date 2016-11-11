@@ -7,7 +7,12 @@ import android.net.NetworkInfo;
 
 import java.util.List;
 
-@SuppressWarnings("unused")
+/**
+ * Created by WuXiaolong
+ * on 2016/5/24.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
+ */
 public class NetConnectUtil {
 
     /**

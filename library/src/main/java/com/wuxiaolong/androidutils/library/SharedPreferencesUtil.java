@@ -7,8 +7,9 @@ import android.preference.PreferenceManager;
 /**
  * Created by WuXiaolong
  * on 2016/3/31.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class SharedPreferencesUtil {
     public static String getString(Context context, String key,
                                    final String defaultValue) {

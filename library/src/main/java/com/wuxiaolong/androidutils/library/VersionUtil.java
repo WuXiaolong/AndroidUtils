@@ -5,13 +5,14 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 /**
- * Created by Administrator
+ * Created by WuXiaolong
  * on 2016/5/24.
  * <p>
  * Android Studio 中会自动生成BuildConfig.java文件
  * 可以通过此文件获得Apk的VersionCode、 VersionName、isDebug
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class VersionUtil {
     /**
      * 获取版本号

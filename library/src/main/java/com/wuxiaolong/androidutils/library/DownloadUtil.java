@@ -10,11 +10,13 @@ import android.os.Environment;
 import android.widget.Toast;
 
 /**
- * Created by Administrator
+ * Created by WuXiaolong
  * on 2016/5/4.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
 //使用步骤1：
-//AndroidManifest注册
+//AndroidManifest注册，最好重新，好监听下载完成
 //<receiver android:name="com.wuxiaolong.androidutils.library.DownloadUtil$DownloadManagerReceiver">
 //<intent-filter>
 //<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
@@ -28,7 +30,6 @@ import android.widget.Toast;
 //downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 //downloadUtil.start();
 
-@SuppressWarnings("unused")
 public class DownloadUtil {
     private Context mContext;
     private String downloadFileName = "weiyan.apk";
@@ -101,7 +102,11 @@ public class DownloadUtil {
                     cursor.close();
                     if (filePath != null) {
                         if (filePath.contains(context.getPackageName())) {
-                            AppUtils.installAPK(context, filePath.trim().substring(7));
+                            if (filePath.endsWith("apk")) {
+                                AppUtils.installAPK(context, filePath.trim().substring(7));
+                            } else {
+                                Toast.makeText(context, "下载完成", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     } else {
                         Toast.makeText(context, "网络不给力", Toast.LENGTH_SHORT).show();

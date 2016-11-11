@@ -21,8 +21,9 @@ import java.text.DecimalFormat;
 /**
  * Created by WuXiaolong
  * on 2016/3/22.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class AppUtils {
     /**
      * 关闭键盘

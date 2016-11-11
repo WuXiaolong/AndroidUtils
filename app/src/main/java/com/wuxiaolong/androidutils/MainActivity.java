@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 DownloadUtil downloadUtil = new DownloadUtil(mActivity, "http://app.mi.com/download/25323");
-                //下载显示名字，不能是中文
+//                //下载显示名字，不能是中文
                 downloadUtil.setDownloadFileName("weiyan" + System.currentTimeMillis() + ".apk");
                 downloadUtil.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                 downloadUtil.start();

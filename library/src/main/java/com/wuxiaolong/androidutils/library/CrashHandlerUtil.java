@@ -35,8 +35,9 @@ import java.util.Map;
  * }
  * Created by Administrator
  * on 2016/5/19.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
     public static final String TAG = "CrashHandlerUtil";

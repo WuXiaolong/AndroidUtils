@@ -11,8 +11,9 @@ import java.util.Locale;
 /**
  * Created by WuXiaolong
  * on 2016/5/20.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class TimeUtil {
     /**
      * 获取当前时间

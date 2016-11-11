@@ -14,8 +14,9 @@ import android.provider.MediaStore;
  * (http://stackoverflow.com/questions/13209494/how-to-get-the-full-file-path-from-uri)
  * Created by WuXiaolong
  * on 2016/5/20.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class AbsolutePathUtil {
     /**
      * @param context 上下文

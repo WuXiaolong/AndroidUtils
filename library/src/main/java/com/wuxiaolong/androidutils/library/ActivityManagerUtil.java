@@ -18,10 +18,11 @@ import java.util.Stack;
  * activityManagerUtil.popOneActivity(this);
  * }
  * }
- * Created by Administrator
+ * Created by WuXiaolong
  * on 2016/5/19.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class ActivityManagerUtil {
     private static ActivityManagerUtil instance;
     //activity栈

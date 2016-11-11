@@ -10,7 +10,6 @@ import android.provider.MediaStore;
  * Created by xdj
  * on 16/8/28.
  */
-@SuppressWarnings("unused")
 public class MediaUtil {
 
     private static final String TAG = MediaUtil.class.getSimpleName();

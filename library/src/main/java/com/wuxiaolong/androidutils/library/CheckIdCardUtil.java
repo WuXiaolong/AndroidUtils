@@ -4,8 +4,9 @@ package com.wuxiaolong.androidutils.library;
  * 校验银行卡卡号
  * Created by WuXiaolong
  * on 2016/5/22.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class CheckIdCardUtil {
     /**
      * 校验银行卡卡号

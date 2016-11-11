@@ -9,7 +9,6 @@ import android.provider.MediaStore;
  * Created by xdj
  * on 16/8/31.
  */
-@SuppressWarnings("unused")
 public class UriUtil {
 
     /**

@@ -27,8 +27,9 @@ import java.io.FileOutputStream;
  * });
  * Created by WuXiaolong
  * on 2016/6/17.
+ * 微信公众号：吴小龙同学
+ * 个人博客：http://wuxiaolong.me/
  */
-@SuppressWarnings("unused")
 public class BitmapCompressUtil {
     private Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
     private int compressQuality = 50;
