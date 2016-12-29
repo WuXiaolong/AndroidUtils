@@ -26,7 +26,7 @@ import java.util.Stack;
 public class ActivityManagerUtil {
     private static ActivityManagerUtil instance;
     //activity栈
-    private Stack<Activity> activityStack;
+    private Stack<Activity> activityStack = new Stack<>();
 
     /**
      * 单例模式
@@ -47,9 +47,6 @@ public class ActivityManagerUtil {
      * @param actvity activity
      */
     public void pushOneActivity(Activity actvity) {
-        if (activityStack == null) {
-            activityStack = new Stack<>();
-        }
         activityStack.add(actvity);
     }
 
