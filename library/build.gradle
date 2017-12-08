@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 106
+        versionName "1.0.6"
+        buildConfigField 'String', 'TAG', '"wxl"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //Lint 检查默认是开启的，Lint 会检查项目中的语法错误，如果没有通过则无法继续。
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+}
+//http://www.cnblogs.com/baron89/p/4662066.html
+task androidJavadocs(type: Javadoc) {
+    //javadoc 的依赖问题
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    //GBK 编码问题,无法映射的GBK编码
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.encoding = "UTF-8"
+        }
+    }
+}
+
+//添加
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    //bintray.com用户名
+    userOrg = 'wuxiaolong'
+    //jcenter上的路径
+    groupId = 'com.wuxiaolong.androidutils'
+    //项目名称
+    artifactId = 'androidutils'
+    //版本号
+    publishVersion = '1.0.6'
+    //描述，不重要
+    desc = '个人收藏-工具类'
+    //网站，不重要
+    website = 'https://github.com/WuXiaolong/AndroidUtils'
+
+}
