@@ -258,12 +258,6 @@ Uri工具类
 
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
-
-# 更多交流
-Android技术交流群-剩者为王⑤群：590967484
-
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qun5.png)
-
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
 
