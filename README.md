@@ -259,7 +259,7 @@ Uri工具类
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
 # 关于作者
-[点击查看](http://wuxiaolong.me/about/)
+[点击查看](https://wuxiaolong.github.io/about/)
 
 # Licenses
 [Apache-2.0](https://opensource.org/licenses/apache2.0.php)
